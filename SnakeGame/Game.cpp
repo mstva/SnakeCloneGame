@@ -3,7 +3,8 @@
 Game::Game() :
     mWindow(nullptr),
     mRenderer(nullptr),
-    isRunning(true)
+    isRunning(true),
+    mTicksCount(0)
 {
 }
 
@@ -18,7 +19,7 @@ bool Game::initGame()
 
     // create the window
     mWindow = SDL_CreateWindow(
-        "Snake Game",                      // title
+        "Snake Game",                       // title
         SDL_WINDOWPOS_UNDEFINED,           // x position
         SDL_WINDOWPOS_UNDEFINED,           // y position
         WIDTH,                             // width
@@ -45,7 +46,7 @@ bool Game::initGame()
         return false;
     }
 
-    return false;
+    return true;
 }
 
 void Game::closeGame()
@@ -81,6 +82,13 @@ void Game::processInput()
 
 void Game::updateGame()
 {
+    while (!SDL_TICKS_PASSED(SDL_GetTicks(), mTicksCount));
+
+    float deltaTime = (SDL_GetTicks() - mTicksCount) / 1000.0f;
+
+    if (deltaTime > 0.05f) { deltaTime = 0.05f; }
+
+    mTicksCount = SDL_GetTicks();
 }
 
 void Game::renderGame()

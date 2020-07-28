@@ -25,5 +25,6 @@ private:
 
 	// game logic
 	bool isRunning;
+	Uint32 mTicksCount;
 };
 
