@@ -1,6 +1,9 @@
 #include "Game.h"
 
-Game::Game()
+Game::Game() :
+    mWindow(nullptr),
+    mRenderer(nullptr),
+    isRunning(true)
 {
 }
 
