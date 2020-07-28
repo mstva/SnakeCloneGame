@@ -17,5 +17,12 @@ private:
 	void processInput();
 	void updateGame();
 	void renderGame();
+
+	// private varible
+	SDL_Window* mWindow;
+	SDL_Renderer* mRenderer;
+
+	// game logic
+	bool isRunning;
 };
 
