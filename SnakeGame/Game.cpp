@@ -79,4 +79,10 @@ void Game::updateGame()
 
 void Game::renderGame()
 {
+    // set background color
+    SDL_SetRenderDrawColor(mRenderer, 80, 50, 15, 255);
+    SDL_RenderClear(mRenderer);
+
+    // present the render on the screen
+    SDL_RenderPresent(mRenderer);
 }
