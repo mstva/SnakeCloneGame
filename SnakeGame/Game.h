@@ -1,6 +1,7 @@
 #pragma once
 #include "SDL.h"
 #include "Constants.h"
+#include "Snake.h"
 
 class Game
 {
@@ -26,5 +27,6 @@ private:
 	// game logic
 	bool isRunning;
 	Uint32 mTicksCount;
+	Snake snake;
 };
 
