@@ -4,7 +4,8 @@ Game::Game() :
     mWindow(nullptr),
     mRenderer(nullptr),
     isRunning(true),
-    mTicksCount(0)
+    mTicksCount(0),
+    snake()
 {
 }
 
@@ -94,8 +95,11 @@ void Game::updateGame()
 void Game::renderGame()
 {
     // set background color
-    SDL_SetRenderDrawColor(mRenderer, 90, 50, 55, 255);
+    SDL_SetRenderDrawColor(mRenderer, 0, 0, 0, 255);
     SDL_RenderClear(mRenderer);
+
+    // draw rect as snake on screen
+    snake.showSnake(mRenderer);
 
     // present the render on the screen
     SDL_RenderPresent(mRenderer);
